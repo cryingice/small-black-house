@@ -14,7 +14,7 @@ const SubMenu = Menu.SubMenu;
  */
 export default class Mmenus extends Component {
   static propTypes = {
-
+    
   }
   constructor(props) {
     super(props);
@@ -22,10 +22,20 @@ export default class Mmenus extends Component {
       openKeys: ['charts']
     }
   }
+  onOpenChange = (openKey)=>{
+    console.log(openKey);
+  }
   render() {
+    const target = window.location.pathname.split('/').pop() || window.location.hash.split('/').pop().split('?')[0] || 'home';  //链接定位
+    const selectKey = [`${target}`];
+    
     return (
-      <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" defaultSelectedKeys={['line','button']}>
-        <Menu.Item key="1">
+      <Menu theme="dark"  mode="inline" onOpenChange={this.onOpenChange} defaultSelectedKeys={selectKey}>
+        <Menu.Item key="home">
+          <Icon type="smile" />
+          <span>首页</span>
+        </Menu.Item>
+        <Menu.Item key="introduction">
           <Icon type="laptop" />
           <span>快速入门</span>
         </Menu.Item>

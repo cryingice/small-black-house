@@ -1,37 +1,38 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout} from 'antd';
 
 import config from '../libs/config';
-import Mmenus from '../components/common/Mmenus';
-
+import Mmenus from 'Components/common/Mmenus';
+import MheaderContainer from 'Components/common/containers/MheaderContainer';
+import { connect } from 'react-redux'
+import {StateToPropsCommonMethod} from 'Libs/mutils';
+import { toggleNavStatus } from 'Redux/action/index';
 import '../index.scss';
 
 const { Content, Footer, Sider } = Layout;
-const SubMenu = Menu.SubMenu;
+const {getNavStatus} = StateToPropsCommonMethod;
 
 
-export default class Dealing extends Component {
+class Dealing extends Component {
   constructor(props) {
     super(props);
     this.state = {
       collapsed: false,
     };
   }
-  onCollapse = (collapsed) => {
-    console.log(collapsed);
-    this.setState({ collapsed });
+  innerOnCollapse = (collapsed) => {
+    console.log(collapsed,'状态');
+    this.props.onCollapse();    //想redux传递action
   }
   render() {
-    console.log(this.props);
-
     return (
       <Layout>
         <Sider
           collapsible
-          collapsed={this.state.collapsed}
-          onCollapse={this.onCollapse}
+          collapsed={!this.props.navStatus}
+          onCollapse={this.innerOnCollapse}
         >
           <div className="logo" >
             <img className="logo-img" src={config.logoSrc} alt=""/>
@@ -40,6 +41,7 @@ export default class Dealing extends Component {
           <Mmenus />
         </Sider>
         <Layout>
+          <MheaderContainer />
           <Content style={{ padding: '0 50px' }}>
             <Route path={`${this.props.match.url}`} component={config.route[this.props.match.url]} />
           </Content>
@@ -51,3 +53,12 @@ export default class Dealing extends Component {
     )
   }
 }
+const mapStateToProps = (state) => ({
+  navStatus:getNavStatus(state)
+})
+
+const mapDispatchToProps = dispatch =>({
+  onCollapse :()=>dispatch(toggleNavStatus())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dealing)

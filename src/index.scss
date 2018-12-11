@@ -18,15 +18,21 @@ body {
   height: 100%;
   //logo
   .logo{
+    width: 100%;
     height: 40px;
     margin: 20px 0;
+    overflow: hidden;
     text-align: center;
     img{
       width: 40px;
     }
+    
     .logo-text{
       color:gray;
     }
+  }
+  .ant-layout-sider-collapsed img{
+    margin-left: 7px;
   }
 
   

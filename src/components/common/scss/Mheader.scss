@@ -1,0 +1,23 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2018-12-11 20:25:14 
+ * @Last Modified by: duanlinlin
+ * @Last Modified time: 2018-12-11 20:29:21
+ */
+ //公共头部样式
+.header{
+  height: 46px;
+  line-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 17px;
+  //nav展开状态标识
+  .anticon-menu-fold{
+    // font-size: 17px;
+  }
+  .anticon-user{
+
+  }
+}

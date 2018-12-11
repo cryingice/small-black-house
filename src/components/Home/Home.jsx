@@ -1,8 +1,6 @@
 import React,{Component} from 'react';
 import  './home.scss';
 
-import Header from '../common/Header';
-
 export default class App extends Component{
     constructor(props){
         super(props);
@@ -13,7 +11,7 @@ export default class App extends Component{
     
     render(){
         let linkHtml = '<link href="/antd/dist/app.css" rel="stylesheet" />';
-        const steps = [{
+            const steps = [{
             title: '下载',
             content: '<p>$&nbsp;&nbsp;&nbsp;git clone</p><p>$&nbsp;&nbsp;&nbsp;git clone https://github.com/sosout/react-antd.git</p><p>$&nbsp;&nbsp;&nbsp;cd react-antd</p>',
           }, {
