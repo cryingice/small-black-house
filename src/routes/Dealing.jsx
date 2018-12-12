@@ -42,7 +42,7 @@ class Dealing extends Component {
         </Sider>
         <Layout>
           <MheaderContainer />
-          <Content style={{ padding: '0 50px' }}>
+          <Content>
             <Route path={`${this.props.match.url}`} component={config.route[this.props.match.url]} />
           </Content>
           <Footer style={{ textAlign: 'center' }}>
