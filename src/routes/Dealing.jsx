@@ -1,15 +1,21 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2018-12-13 16:25:02 
+ * @Last Modified by:   duanlinlin 
+ * @Last Modified time: 2018-12-13 16:25:02 
+ */
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { Route } from 'react-router-dom';
-
 import { Layout} from 'antd';
 
-import config from '../libs/config';
+import '../index.scss';
+import config from 'Libs/config';
+import routeConfig from 'Libs/routeConfig';
 import Mmenus from 'Components/common/Mmenus';
 import MheaderContainer from 'Components/common/containers/MheaderContainer';
-import { connect } from 'react-redux'
 import {StateToPropsCommonMethod} from 'Libs/mutils';
 import { toggleNavStatus } from 'Redux/action/index';
-import '../index.scss';
 
 const { Content, Footer, Sider } = Layout;
 const {getNavStatus} = StateToPropsCommonMethod;
@@ -43,7 +49,7 @@ class Dealing extends Component {
         <Layout>
           <MheaderContainer />
           <Content>
-            <Route path={`${this.props.match.url}`} component={config.route[this.props.match.url]} />
+            <Route path={`${this.props.match.url}`} component={routeConfig[this.props.match.url]} />
           </Content>
           <Footer style={{ textAlign: 'center' }}>
             Ant Design ©2018 Created by Ant UED

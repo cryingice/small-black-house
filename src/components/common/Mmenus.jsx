@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 import { Menu, Icon } from 'antd';
 
@@ -13,9 +13,9 @@ const SubMenu = Menu.SubMenu;
  * @extends Component
  */
 export default class Mmenus extends Component {
-  static propTypes = {
+  // static propTypes = {
     
-  }
+  // }
   constructor(props) {
     super(props);
     this.state = {

@@ -9,7 +9,7 @@ import createLogger from 'redux-logger';
 import 'babel-polyfill';    //map set generator es6属性
 import 'normalize.css';
 import Route from './routes/index.jsx';
-import registerServiceWorker from './serviceWorker';
+// import registerServiceWorker from './serviceWorker';
 import reducer from './redux/reducer/index';
 
 const store = createStore(reducer, 
