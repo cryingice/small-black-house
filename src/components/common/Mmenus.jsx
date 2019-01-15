@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import { Menu, Icon } from 'antd';
 
+import config from '../../libs/config';
 const SubMenu = Menu.SubMenu;
+const MmenusMsg = config.Mmenus;
 
 /**
  * 公共菜单
@@ -14,7 +17,7 @@ const SubMenu = Menu.SubMenu;
  */
 export default class Mmenus extends Component {
   // static propTypes = {
-    
+
   // }
   constructor(props) {
     super(props);
@@ -22,49 +25,51 @@ export default class Mmenus extends Component {
       openKeys: ['charts']
     }
   }
-  onOpenChange = (openKey)=>{
+  onOpenChange = (openKey) => {
     console.log(openKey);
+  }
+  //具有子tab
+  getComplexTab = (tab) => {
+    return (
+      <SubMenu
+        key={tab.key}
+        title={<span><Icon type={tab.type} /><span>{tab.text}</span></span>}
+      >
+        {tab.sub.map(subTab => {
+          return (
+            <Menu.Item key={subTab.key}>
+              <Link to={subTab.link}>
+                <Icon type={subTab.type} />
+                <span>{subTab.text}</span>
+              </Link>
+            </Menu.Item>
+          )
+        })}
+      </SubMenu>
+    )
+  }
+  //无子tab
+  getSingleTab = (tab) => {
+    return (
+      <Menu.Item key={tab.key}>
+        <Link to={tab.link}>
+          <Icon type={tab.type} />
+          <span>{tab.text}</span>
+        </Link>
+      </Menu.Item>
+    )
   }
   render() {
     const target = window.location.pathname.split('/').pop() || window.location.hash.split('/').pop().split('?')[0] || 'home';  //链接定位
     const selectKey = [`${target}`];
-    
+    const cps = MmenusMsg.map(tab => {
+      let cp = null;
+      cp = tab.sub ? this.getComplexTab(tab) : this.getSingleTab(tab);
+      return cp;
+    })
     return (
-      <Menu theme="dark"  mode="inline" onOpenChange={this.onOpenChange} defaultSelectedKeys={selectKey}>
-        <Menu.Item key="home">
-          <Icon type="smile" />
-          <span>首页</span>
-        </Menu.Item>
-        <Menu.Item key="introduction">
-          <Icon type="laptop" />
-          <span>快速入门</span>
-        </Menu.Item>
-        <SubMenu
-          key="charts"
-          title={<span><Icon type="bar-chart" /><span>百度图表</span></span>}
-        >
-          <Menu.Item key="line">
-            <Icon type="line-chart" />
-            <span>折线图</span>
-          </Menu.Item>
-        </SubMenu>
-        <SubMenu
-          key="sub2"
-          title={<span><Icon type="setting" /><span>基础组件</span></span>}
-        >
-          <Menu.Item key="button">
-            <Icon type="editor" />
-            <span>按钮</span>
-          </Menu.Item>
-        </SubMenu>
-        <Menu.Item key="userManager">
-          <Icon type="nav-text" />
-          <span>用户管理</span>
-        </Menu.Item>
-        <Menu.Item key="adver">
-          <Icon type="notification" />
-          <span className="nav-text">广告管理</span>
-        </Menu.Item>
+      <Menu theme="dark" mode="inline" onOpenChange={this.onOpenChange} defaultSelectedKeys={selectKey}>
+        {cps}
       </Menu>
     )
   }

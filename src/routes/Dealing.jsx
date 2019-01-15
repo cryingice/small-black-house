@@ -1,8 +1,8 @@
 /*
  * @Author: duanlinlin 
  * @Date: 2018-12-13 16:25:02 
- * @Last Modified by:   duanlinlin 
- * @Last Modified time: 2018-12-13 16:25:02 
+ * @Last Modified by: duanlinlin
+ * @Last Modified time: 2019-01-14 11:14:14
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
@@ -14,6 +14,7 @@ import config from 'Libs/config';
 import routeConfig from 'Libs/routeConfig';
 import Mmenus from 'Components/common/Mmenus';
 import MheaderContainer from 'Components/common/containers/MheaderContainer';
+import MbreadCrumb from 'Components/common/MbreadCrumb';
 import {StateToPropsCommonMethod} from 'Libs/mutils';
 import { toggleNavStatus } from 'Redux/action/index';
 
@@ -24,6 +25,7 @@ const {getNavStatus} = StateToPropsCommonMethod;
 class Dealing extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props,'this.props');
     this.state = {
       collapsed: false,
     };
@@ -48,11 +50,12 @@ class Dealing extends Component {
         </Sider>
         <Layout>
           <MheaderContainer />
+          <MbreadCrumb location={this.props.location.pathname}></MbreadCrumb>
           <Content>
-            <Route path={`${this.props.match.url}`} component={routeConfig[this.props.match.url]} />
+            <Route path={`${this.props.location.pathname}`} component={routeConfig[this.props.location.pathname]} />
           </Content>
           <Footer style={{ textAlign: 'center' }}>
-            Ant Design ©2018 Created by Ant UED
+          {config.footText}
         </Footer>
         </Layout>
       </Layout>

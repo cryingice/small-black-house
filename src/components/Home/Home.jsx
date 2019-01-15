@@ -2,24 +2,22 @@
  * @Author: duanlinlin 
  * @Date: 2018-12-13 16:26:19 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2018-12-13 17:14:49
+ * @Last Modified time: 2019-01-15 12:07:14
  */
 import React, { Component } from 'react';
 import { Card } from 'antd'
 
 import './home.scss';
 import config from 'Libs/config';
-import Mstep from './_components/Mstep';
+import Mstep from './_components/Mstep';    //项目上手组件
 
 const { introduction, install, title } = config.home;   //项目介绍、项目上手、标题
-const { star, content } = introduction;
+const { star, content, accessLink } = introduction;
 const { steps } = install;
 
 export default class Home extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
-        
         this.state = {
         }
     }
@@ -39,9 +37,11 @@ export default class Home extends Component {
                 >
                     <Mstep />
                 </Card>
-                <div className="container">
-                    我是home
-                </div>
+                <Card
+                    title={title[2]}
+                >
+                    <div dangerouslySetInnerHTML={{ __html: accessLink }}></div>
+                </Card>
             </div>
         )
     }

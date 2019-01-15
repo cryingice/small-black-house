@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Mmenus from '../Mmenus';
-import {StateToPropsCommonMethod} from 'Libs/uitl';
+import {StateToPropsCommonMethod} from 'Libs/muitls';
 import { toggleNavStatus } from 'Redux/action/index'
 
 const {getNavStatus} = StateToPropsCommonMethod;

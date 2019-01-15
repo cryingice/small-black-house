@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="button" >
+    我是按钮
+  </div>
+  <script>
+    const obj={
+      msg:'我是msg',
+      method:function(){
+        console.log(this);
+        console.log(this.msg);
+      }
+    };
+    // const copy = obj.method;
+    (function(){
+      const button = document.querySelector('.button');
+      console.log(button,'bub');
+      button.addEventListener('click',obj.method);
+    })()
+    
+  </script>
+</body>
+</html>

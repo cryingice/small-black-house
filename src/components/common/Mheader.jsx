@@ -42,7 +42,7 @@ export default class Mheader extends Component {
         <span className="user-info">
           <Icon type="user" />
           <span className="user-info-name">
-            {'' + this.props.navStatus}
+           {/* {'' + this.props.navStatus}*/} 
             大吉大利,晚上吃鸡!!
         </span>
         </span>
