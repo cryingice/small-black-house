@@ -1,9 +1,17 @@
 /*
  * @Author: duanlinlin 
  * @Date: 2019-01-20 17:31:08 
- * @Last Modified by:   duanlinlin 
- * @Last Modified time: 2019-01-20 17:31:08 
+ * @Last Modified by: duanlinlin
+ * @Last Modified time: 2019-01-20 20:58:22
  */
 .single-skill-content{
     flex:  1 1 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 10px;
+    span{
+        font-size: 12px;
+    }
 }

@@ -22,13 +22,11 @@ export default class Mheader extends Component {
   }
   constructor(props) {
     super(props);
-    console.log(props, 'props');
     this.state = {
       // triggerName:'menu-fold'
     }
   }
   componentDidUpdate(){
-    console.log(this.props,'更新了');
     
   }
   render() {

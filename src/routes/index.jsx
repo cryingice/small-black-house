@@ -7,7 +7,6 @@ import Dealing from './Dealing';
 import Demo from '../components/Demo/Demo';
 // import {StateToPropsCommonMethod} from 'Libs/uitl';
 
-// console.log('StateToPropsCommonMethod',StateToPropsCommonMethod);
 
 export default class MRoute extends Component {
     render() {

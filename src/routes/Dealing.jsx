@@ -26,13 +26,11 @@ const { getNavStatus } = StateToPropsCommonMethod;
 class Dealing extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props, 'this.props');
     this.state = {
       collapsed: false,
     };
   }
   innerOnCollapse = (collapsed) => {
-    console.log(collapsed, '状态');
     this.props.onCollapse();    //想redux传递action
   }
   render() {

@@ -6,8 +6,8 @@ import '../../scss/Skill/SingleSkill.scss';
 export default (params) => {
     return (
         <div className="single-skill">
-            <Percent></Percent>
-            <SingleSkillContent></SingleSkillContent>
+            <Percent percentInfo={params.singleInfo.percentInfo}></Percent>
+            <SingleSkillContent singleSkillContentInfo={params.singleInfo.singleSkillContentInfo}></SingleSkillContent>
         </div>
     )
 }

@@ -2,7 +2,7 @@
  * @Author: duanlinlin 
  * @Date: 2019-01-14 17:00:50 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-19 13:16:01
+ * @Last Modified time: 2019-01-21 00:13:18
  */
 import constant from './constant';
 import avatar from 'Assets/icon.jpeg';
@@ -67,7 +67,7 @@ export default {
     mBreadCrumb:{
         introduction:'用户生活',
         creative:'个人创意',
-        experience:'经历',
+        experiences:'经历',
         Mcanvas:'Mcanvas',
         setting:'基础组件',
         button:'按钮',

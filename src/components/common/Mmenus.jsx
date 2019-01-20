@@ -20,7 +20,6 @@ export default class Mmenus extends Component {
     super(props);
   }
   onOpenChange = (openKey) => {
-    console.log(openKey);
   }
   //具有子tab
   getComplexTab = (tab) => {

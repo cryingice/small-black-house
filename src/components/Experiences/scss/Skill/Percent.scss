@@ -2,39 +2,50 @@
  * @Author: duanlinlin 
  * @Date: 2019-01-20 17:30:35 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-20 20:21:06
+ * @Last Modified time: 2019-01-20 22:34:23
  */
+$time : 1.5s;
+@mixin get-slideout-name($name,$val) {
+    animation: slideout $time/$val steps(2, end);
+}
+@mixin get-left-animation-name($name) {
+    animation-name: $name;
+}
+@mixin get-right-animation-duration($val) {
+    animation-duration: $time/$val;
+}
 .percent {
     flex: none;
     width: 100px;
     height: 100px;
     position: relative;
-    .hide-cover{
+    .category-text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        animation: textslidein 1 linear 3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 4;
+    }
+    .hide-cover {
         position: absolute;
         background-color: #fff;
-        width:50%;
+        width: 50%;
         height: 100%;
-        // animation-delay: .3s;
-        // animation-duration: 0.1s;
-        // animation-name: slideout;
-        // clip: rect(0 100px 100px 0);
         opacity: 0;
         z-index: 3;
-        animation: slideout .3s steps(2, end);
     }
-    @keyframes slideout {
-        0% {
-            // clip: rect(0 100px 100px 50px);
-            opacity: 1;
-        }
-        95%{
-            opacity: 1;
-        }
-        100% {
-            // clip: rect(0 100px 100px 0);
-            opacity: 0;
-        }
+    .hide-cover-per-75{
+        @include get-slideout-name(slideout, 0.75);
     }
+    .hide-cover-per-80{
+        @include get-slideout-name(slideout, 0.8);
+    }
+
     .cicle {
         width: 100px;
         height: 100px;
@@ -52,40 +63,75 @@
     }
 
     .left {
-        // animation: leftspin 1s linear 1;
-        animation-duration: .6s;
-        /* Full animation time */
-        animation-name: leftspin;
+        animation-duration: 3s;
     }
-
     .right {
-        // animation: rightspin 2s linear 1;
-        animation-duration: .3s;
-        /* Half animation time */
         animation-name: rightspin;
     }
+
+    
+    .left-per-75{
+        @include get-left-animation-name(leftper75);
+    }
+    .left-per-80{
+        @include get-left-animation-name(leftper80);
+    }
+    
+    .right-per-75{
+        @include get-right-animation-duration(0.75);
+    }
+    .right-per-80{
+        @include get-right-animation-duration(0.8);
+    }
+    @keyframes textslidein {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    @keyframes slideout {
+        0% {
+            opacity: 1;
+        }
+
+        99% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
     /* Rotate the right side of the progress bar from 0 to 180 degrees */
-@keyframes rightspin {
-    from {
-        transform: rotate(0deg);
+    @keyframes rightspin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(180deg);
+        }
     }
 
-    to {
-        transform: rotate(180deg);
+    /* Rotate the left side of the progress bar from 0 to 360 degrees */
+    @keyframes leftper75 {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(270deg);
+        }
+    }
+    @keyframes leftper80 {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(288deg);
+        }
     }
 }
-
-/* Rotate the left side of the progress bar from 0 to 360 degrees */
-@keyframes leftspin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-}
-
-
-
