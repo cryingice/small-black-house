@@ -16,14 +16,8 @@ const MmenusMsg = config.Mmenus;
  * @extends Component
  */
 export default class Mmenus extends Component {
-  // static propTypes = {
-
-  // }
   constructor(props) {
     super(props);
-    this.state = {
-      openKeys: ['charts']
-    }
   }
   onOpenChange = (openKey) => {
     console.log(openKey);
@@ -60,7 +54,8 @@ export default class Mmenus extends Component {
     )
   }
   render() {
-    const target = window.location.pathname.split('/').pop() || window.location.hash.split('/').pop().split('?')[0] || 'home';  //链接定位
+    const target = this.props.mPathname.split('/').pop().split('?')[0] || ''; //选中的tab
+    const openTarget = this.props.mPathname.split('/')[1] || '';  //打开的父tab
     const selectKey = [`${target}`];
     const cps = MmenusMsg.map(tab => {
       let cp = null;
@@ -68,7 +63,7 @@ export default class Mmenus extends Component {
       return cp;
     })
     return (
-      <Menu theme="dark" mode="inline" onOpenChange={this.onOpenChange} defaultSelectedKeys={selectKey}>
+      <Menu theme="dark" mode="inline" onOpenChange={this.onOpenChange} selectedKeys = {selectKey} defaultSelectedKeys= {selectKey} defaultOpenKeys={[`${openTarget}`]}>
         {cps}
       </Menu>
     )

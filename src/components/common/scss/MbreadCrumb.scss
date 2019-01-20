@@ -2,8 +2,22 @@
  * @Author: duanlinlin 
  * @Date: 2019-01-15 11:18:11 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-15 11:26:05
+ * @Last Modified time: 2019-01-15 21:08:54
  */
 .bread-crumb-container{
-    padding:0 20px 10px 20px;
+    flex:none;
+    margin:10px 20px;
+    color:rgba(255,255,255,0.65);
+    a{
+        color:#dd9120;
+    }
+    .ant-breadcrumb{
+        width: 400px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0.4);
+    }
+    .ant-breadcrumb-separator{
+        color:#dd9120;
+    }
 }

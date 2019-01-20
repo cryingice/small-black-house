@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { Icon } from 'antd';
 
 import './scss/Mheader.scss';
+import avatar from 'Assets/icon.jpeg';
 
 // const SubMenu = Menu.SubMenu;
 
@@ -31,7 +32,6 @@ export default class Mheader extends Component {
     
   }
   render() {
-
     return (
       <div className="header">
         <Icon
@@ -40,7 +40,8 @@ export default class Mheader extends Component {
           onClick={this.props.toggleStatus}
         />
         <span className="user-info">
-          <Icon type="user" />
+          <img src={avatar}></img>
+          {/*<Icon type="user" />*/}
           <span className="user-info-name">
            {/* {'' + this.props.navStatus}*/} 
             大吉大利,晚上吃鸡!!

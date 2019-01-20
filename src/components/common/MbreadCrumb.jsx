@@ -2,7 +2,7 @@
  * @Author: duanlinlin 
  * @Date: 2019-01-14 11:42:09 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-15 11:37:15
+ * @Last Modified time: 2019-01-15 15:47:50
  */
 import './scss/MbreadCrumb.scss'
 import React, { Component } from 'react'
@@ -12,6 +12,7 @@ import config from '../../libs/config';
 const mBreadCrumb = config.mBreadCrumb;
 
 export default (params) => {
+    //路径片段 
     const pathSnippets = params.location.split('/').slice(1);
     const pathLists = pathSnippets[0] !== 'home' ?
         pathSnippets.map((item, idx) => {

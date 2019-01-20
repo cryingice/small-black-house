@@ -2,26 +2,38 @@
  * @Author: duanlinlin 
  * @Date: 2018-12-11 20:25:14 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2018-12-11 20:29:21
+ * @Last Modified time: 2019-01-15 21:15:42
  */
  //公共头部样式
 .header{
-  height: 46px;
+  flex:none;
   line-height: 46px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
   font-size: 17px;
+  color:rgba(255,255,255,0.65);
   //nav展开状态标识
-  .anticon-menu-fold{
-    // font-size: 17px;
-  }
-  .anticon-user{
-
+  .trigger{
+    color: #dd9120;
+    cursor: pointer;
+    &:hover{
+      color: #40a9ff;
+    }
   }
   .user-info{
+    height: 46px;
+    display: block;
+    height: 100%;
+    color:rgba(255,255,255,0.65);
+    img{
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+    }
     .user-info-name{
+        padding-left: 5px;
         font-size:14px;
     }
   }

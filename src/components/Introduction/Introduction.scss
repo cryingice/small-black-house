@@ -1,0 +1,129 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-01-16 13:00:00 
+ * @Last Modified by: duanlinlin
+ * @Last Modified time: 2019-01-16 17:22:37
+ */
+//  图标
+
+
+.introduction {
+    background: url('../../asset/wood_pattern.png');
+    // max-width: 1150px;
+    max-width: 120vh;
+    padding: 10px 0px;
+    margin: 11px auto;
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-around;
+    // background: #4e4949;
+    flex-direction: column;
+    border-radius: 1vh;
+
+    &:hover {
+        box-shadow: 16px 16px 1px -6px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        background: #a8c4c0;
+        background: -moz-linear-gradient(to top, #a8c4c0 0%, #7aa5a2 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a8c4c0), color-stop(100%, #7aa5a2));
+        background: -webkit-linear-gradient(to top, #a8c4c0 0%, #7aa5a2 100%);
+        background: -o-linear-gradient(to top, #a8c4c0 0%, #7aa5a2 100%);
+        background: -ms-linear-gradient(to top, #a8c4c0 0%, #7aa5a2 100%);
+        background: linear-gradient(to top, #a8c4c0 0%, #7aa5a2 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a8c4c0', endColorstr='#7aa5a2', GradientType=0);
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0 20px;
+        line-height: 7vh;
+        height: 7vh;
+        margin-left: -4vh;
+        position: relative;
+        width: 90%;
+        box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+        color: #3b3a3b;
+        text-shadow: 0 3px 0 rgba(255, 255, 255, 0.4);
+
+        align-self: flex-start;
+        font-size: 3vh;
+        text-align: center;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            line-height: 0;
+            border-left: 4vh solid transparent;
+            border-top: 4vh solid #729c9a;
+            bottom: -4vh;
+            left: 0;
+            position: absolute;
+        }
+
+        &::after {
+            right: 0;
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4vh;
+            border-top: 1px solid purple;
+            border-bottom: 1px solid purple;
+            width: 100%;
+        }
+    }
+
+    .introduction-navigation-panel {
+        /*边框样式 起*/
+        /*box-shadow*/
+        -webkit-box-shadow: 0 2px 5px hsla(0, 0%, 0%, .4), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsla(0, 0%, 0%, .5), inset 0 0 50px hsla(0, 0%, 0%, .5);
+        -moz-box-shadow: 0 2px 5px hsla(0, 0%, 0%, .4), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsla(0, 0%, 0%, .5), inset 0 0 50px hsla(0, 0%, 0%, .5);
+        box-shadow: 0 2px 5px hsla(0, 0%, 0%, .4), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsla(0, 0%, 0%, .5), inset 0 0 50px hsla(0, 0%, 0%, .5);
+        border: 1px solid #eee;
+        /*border-radius*/
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        padding: 10px;
+        /*边框样式 终*/
+        width: 60%;
+        height: 50vh;
+        /* background-color: green; */
+        position: relative;
+        display: flex;
+
+        .left{
+            width: 34%;
+            height: 100%;
+            position: relative;
+            flex: auto;
+            display: flex;
+        }
+        
+        .right {
+            width: 64%;
+            //  height: 100%;
+            /* background-color: blue; */
+            flex: auto;
+
+            .right_top {
+                width: 100%;
+                height: 50%;
+                display: flex;
+
+                
+            }
+
+            .right_foot {
+                width: 100%;
+                height: 50%;
+                display: inline-flex;
+            }
+        }
+    }
+}

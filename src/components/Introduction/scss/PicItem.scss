@@ -1,0 +1,70 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-01-16 15:36:15 
+ * @Last Modified by: duanlinlin
+ * @Last Modified time: 2019-01-16 17:59:33
+ */
+ @mixin getWidth($value){
+    width:$value;
+ }
+.s_icon {
+    width: 7vh;
+    height: 7vh;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2196f3;
+    ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    .iconfont {
+        font-size: 5vh;
+        color: #2196f3;
+    }
+}
+
+//图片
+.pic{
+    overflow: hidden;
+    position: relative;
+    &:hover {
+        .s_icon {
+            display: none;
+        }
+        .cover {
+            /* transform: translate(0,0); */
+            left: 0;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.reading {
+    @include getWidth(50%);
+}
+.work {
+    @include getWidth(25%);
+}
+.music {
+    @include getWidth(25%);
+}
+.comic {
+    @include getWidth(50%);
+}
+.game {
+    @include getWidth(50%);
+}
+.description {
+    padding: 0 8vh 4vh 8vh;
+    font-size: 1.6vh;
+}

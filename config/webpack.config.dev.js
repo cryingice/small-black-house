@@ -93,6 +93,7 @@ module.exports = {
       //Libs the library of tools
       'Libs':path.resolve(__dirname,'../src/libs/'),
       'Components':path.resolve(__dirname,'../src/components/'),
+      'Assets':path.resolve(__dirname,'../src/asset/'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

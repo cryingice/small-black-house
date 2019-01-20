@@ -2,35 +2,42 @@
  * @Author: duanlinlin 
  * @Date: 2019-01-14 17:00:50 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-14 17:27:07
+ * @Last Modified time: 2019-01-19 13:16:01
  */
 import constant from './constant';
+import avatar from 'Assets/icon.jpeg';
 const { NEXT, PRE, COMPLETE } = constant;
 export default {
     footText: 'Experience Depends On You',
-    logoSrc: 'https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg',
-    logoText: 'ANTD ADMIN',
+    logo: avatar,
+    logoText: 'Cryingice',
     Mmenus: [{
             key: 'home',
             type: 'smile',
             link: '/home',
-            text: '首页'
+            text: '项目概况'
         },
         {
             key: 'introduction',
             type: 'laptop',
             link: '/introduction',
-            text: '快速入门'
+            text: '用户生活'
         },
         {
-            key: 'charts',
-            type: 'bar-chart',
-            text: '百度图表',
+            key: 'experiences',
+            type: 'snippets',
+            link: '/experiences',
+            text: '用户经历'
+        },
+        {
+            key: 'creative',
+            type: 'question',
+            text: '个人创意',
             sub: [{
-                key: 'line',
-                type: 'line-chart',
-                link: '/charts/line',
-                text: '折线图'
+                key: 'Mcanvas',
+                type: 'highlight',
+                link: '/creative/Mcanvas',
+                text: 'canvas'
             }]
         },
         {
@@ -58,9 +65,10 @@ export default {
         }
     ],
     mBreadCrumb:{
-        introduction:'快速入门',
-        charts:'百度图表',
-        line:'折线图',
+        introduction:'用户生活',
+        creative:'个人创意',
+        experience:'经历',
+        Mcanvas:'Mcanvas',
         setting:'基础组件',
         button:'按钮',
         userManager:'用户管理',
@@ -74,7 +82,7 @@ export default {
                 link: 'https://github.com/cryingice/react-learn-management'
             },
             content: '本工程主要基于react + redux + scss + es6 + react-router + antd(v3.10.5) + webpack实现,是用来练手的项目,为业余时间所做。基于create-react-app快节奏搭建。',
-            accessLink: '<p>访问地址:<a href="http://localhost:4001" target="_blank">http://localhost:4001</a></p>',
+            accessLink: '<p>访问地址:<a href="http://localhost:4008" target="_blank">http://localhost:4008</a></p>',
         },
         install: {
             steps: [{
@@ -103,6 +111,48 @@ export default {
             }
         }
 
+    },
+    introduction:{
+        photoStorage:{
+            title:'My Life',
+            footText:'You will get more things includes inspiration moving and satisfy when wiriting down the details around you.Try accepting life,try sharing life,try thinking everythings,being a great person',
+            content:[
+                {
+                    cla:'travel',
+                    title:'游记',
+                    sub:'上天给了我漆黑的眼睛,让我去发现世界的精彩',
+                    icon:'icon-lvhang'
+                },{
+                    cla:'reading',
+                    title:'阅读',
+                    sub:'心有猛虎 细嗅蔷薇',
+                    icon:'icon-yuedu'
+                },
+                {
+                    cla:'work',
+                    title:'工作',
+                    sub:'为钱? 为心安? 为成就感?还是...',
+                    icon:'icon-gongwenbao'
+                },
+                {
+                    cla:'music',
+                    title:'音乐',
+                    sub:'喜爱♪,喜爱吹陶笛,不解释',
+                    icon:'icon-iconset0163'
+                },
+                {
+                    cla:'comic',
+                    title:'动漫',
+                    sub:'动漫投影生活,映射幻想',
+                    icon:'icon-CN_bilibiliB'
+                },
+                {
+                    cla:'game',
+                    title:'娱乐',
+                    sub:'哥们,刀不?',
+                    icon:'icon-78'
+                }
+            ],
+        }
     }
-
 }

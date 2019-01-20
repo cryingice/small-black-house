@@ -70,19 +70,26 @@
 	}
 
 	function documentMouseMoveHandler(event) {
+		console.log('mousemove',event);
+
 		mouseX = event.clientX - (window.innerWidth - SCREEN_WIDTH) * .5;
 		mouseY = event.clientY - (window.innerHeight - SCREEN_HEIGHT) * .5;
 	}
 	
 	function documentMouseDownHandler(event) {
+		console.log('mouseDOWN',event);
+
 		mouseIsDown = true;
 	}
 	
 	function documentMouseUpHandler(event) {
+		console.log('mouseup',event);
 		mouseIsDown = false;
 	}
 
 	function canvasTouchStartHandler(event) {
+		console.log('touchSTART',event);
+		
 		if(event.touches.length == 1) {
 			event.preventDefault();
 
@@ -92,6 +99,7 @@
 	}
 	
 	function canvasTouchMoveHandler(event) {
+		console.log('touchMOVE',event);
 		if(event.touches.length == 1) {
 			event.preventDefault();
 
@@ -103,7 +111,7 @@
 	function windowResizeHandler() {
 		//SCREEN_WIDTH = window.innerWidth;
 		//SCREEN_HEIGHT = window.innerHeight;
-		
+		console.log('resize');
 		canvas.width = SCREEN_WIDTH;
 		canvas.height = SCREEN_HEIGHT;
 		

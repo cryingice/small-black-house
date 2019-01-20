@@ -1,0 +1,31 @@
+.experiences{
+    // display: flex;
+    // width: 70vh;
+    margin: 0 auto;
+    width: 100%; 
+    max-width: 1000px;
+    flex-direction: column;
+    
+    header{
+        width: 100%;
+        // flex:none;
+        display: flex;
+    }
+    .content{
+        // flex:none;
+        display: flex;
+        aside{
+            padding: 20px 22px;
+            box-sizing: border-box;
+            width: 30%;
+            background-color: #001529;
+            color: #fff;
+        }
+        main{
+            background-color: #fff;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

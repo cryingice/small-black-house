@@ -1,0 +1,91 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-01-20 17:30:35 
+ * @Last Modified by: duanlinlin
+ * @Last Modified time: 2019-01-20 20:21:06
+ */
+.percent {
+    flex: none;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    .hide-cover{
+        position: absolute;
+        background-color: #fff;
+        width:50%;
+        height: 100%;
+        // animation-delay: .3s;
+        // animation-duration: 0.1s;
+        // animation-name: slideout;
+        // clip: rect(0 100px 100px 0);
+        opacity: 0;
+        z-index: 3;
+        animation: slideout .3s steps(2, end);
+    }
+    @keyframes slideout {
+        0% {
+            // clip: rect(0 100px 100px 50px);
+            opacity: 1;
+        }
+        95%{
+            opacity: 1;
+        }
+        100% {
+            // clip: rect(0 100px 100px 0);
+            opacity: 0;
+        }
+    }
+    .cicle {
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        border: 10px solid green;
+        position: absolute;
+        border-radius: 50%;
+        clip: rect(0px, 50px, 100px, 0px);
+    }
+
+    .base {
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    .left {
+        // animation: leftspin 1s linear 1;
+        animation-duration: .6s;
+        /* Full animation time */
+        animation-name: leftspin;
+    }
+
+    .right {
+        // animation: rightspin 2s linear 1;
+        animation-duration: .3s;
+        /* Half animation time */
+        animation-name: rightspin;
+    }
+    /* Rotate the right side of the progress bar from 0 to 180 degrees */
+@keyframes rightspin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+/* Rotate the left side of the progress bar from 0 to 360 degrees */
+@keyframes leftspin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+}
+
+
+
