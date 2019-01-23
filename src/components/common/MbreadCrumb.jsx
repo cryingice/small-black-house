@@ -11,8 +11,9 @@ import { Breadcrumb, Icon } from 'antd';
 import config from '../../libs/config';
 const mBreadCrumb = config.mBreadCrumb;
 
+//common breadCrumb
 export default (params) => {
-    //路径片段 
+    //path sinppets
     const pathSnippets = params.location.split('/').slice(1);
     const pathLists = pathSnippets[0] !== 'home' ?
         pathSnippets.map((item, idx) => {

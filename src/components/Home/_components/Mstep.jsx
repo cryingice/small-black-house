@@ -1,3 +1,9 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-01-23 16:08:36 
+ * @Last Modified by:   duanlinlin 
+ * @Last Modified time: 2019-01-23 16:08:36 
+ */
 import React, { Component } from 'react'
 import { Steps, Button, message } from 'antd';
 // import config from 'Libs/config'
@@ -6,9 +12,9 @@ import { NEXT, PRE, COMPLETE } from 'Libs/constant';
 import MButton from './MButton';
 const Step = Steps.Step;
 const { install } = config.home;
-const { steps, buttonStatus } = install;    //配置文件: 各步骤文本 按钮配置 
+const { steps, buttonStatus } = install;    //config file: steps button
 
-//功能列表可在这自定义
+//steps current status 
 const fuctionList = {
   NEXT(){
     const current = this.state.current + 1;
@@ -22,23 +28,30 @@ const fuctionList = {
     message.success('恭喜获得屠龙宝刀一把!')
   },
 }
+/**
+ * @description the steps about install project
+ *
+ * @export
+ * @class Mstep
+ * @extends {Component}
+ */
 export default class Mstep extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: 0,  //步骤数 0,1,2
+      current: 0,  //stepNum 0,1,2
     }
   }
 
   /**
-   * @description 切换选中状态
+   * @description trigger 
    * @param {Number} index 
    */
   changeCurrentStatu(index) {
     this.setState({ current: index });
   }
 /**
- * @description 创建按钮组件
+ * @description create button
  * @param {*} typeKey 
  */
   createButtonDom(typeKey) {
@@ -53,7 +66,7 @@ export default class Mstep extends Component {
     const typeKey = Object.keys(buttonStatus).find(item => {
       return `step${current+1}` === item
     })
-    //需展示的组件集
+    
     const buttonCoponentList = this.createButtonDom(typeKey);   
     return (
       <div className='install-mstep'>

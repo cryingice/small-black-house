@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
-import history from '../components/common/history';
+import history from '../components/common/history'; 
 
 import Login from '../components/Login/Login';
-import Dealing from './Dealing';
-import Demo from '../components/Demo/Demo';
+import Dealing from './Dealing';    //the processor of some routes
+import Demo from '../components/Demo/Demo';     
 // import {StateToPropsCommonMethod} from 'Libs/uitl';
 
 

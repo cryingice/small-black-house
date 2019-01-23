@@ -9,7 +9,7 @@ const SubMenu = Menu.SubMenu;
 const MmenusMsg = config.Mmenus;
 
 /**
- * 公共菜单
+ * common navigation
  * 
  * @export
  * @class Mmenus
@@ -21,7 +21,11 @@ export default class Mmenus extends Component {
   }
   onOpenChange = (openKey) => {
   }
-  //具有子tab
+  /**
+   * get component of tab that have subTab
+   * @param {Object} tab infos
+   * @returns {Component}
+   */
   getComplexTab = (tab) => {
     return (
       <SubMenu
@@ -41,7 +45,11 @@ export default class Mmenus extends Component {
       </SubMenu>
     )
   }
-  //无子tab
+  /**
+   * get component of tab that haven't subTab
+   * @param {Object} tab infos
+   * @returns {Component}
+   */
   getSingleTab = (tab) => {
     return (
       <Menu.Item key={tab.key}>
@@ -53,8 +61,8 @@ export default class Mmenus extends Component {
     )
   }
   render() {
-    const target = this.props.mPathname.split('/').pop().split('?')[0] || ''; //选中的tab
-    const openTarget = this.props.mPathname.split('/')[1] || '';  //打开的父tab
+    const target = this.props.mPathname.split('/').pop().split('?')[0] || ''; //tab of selected
+    const openTarget = this.props.mPathname.split('/')[1] || '';  //tabs that show children
     const selectKey = [`${target}`];
     const cps = MmenusMsg.map(tab => {
       let cp = null;
@@ -62,7 +70,7 @@ export default class Mmenus extends Component {
       return cp;
     })
     return (
-      <Menu theme="dark" mode="inline" onOpenChange={this.onOpenChange} selectedKeys = {selectKey} defaultSelectedKeys= {selectKey} defaultOpenKeys={[`${openTarget}`]}>
+      <Menu theme="dark" mode="inline" onOpenChange={this.onOpenChange} selectedKeys={selectKey} defaultSelectedKeys={selectKey} defaultOpenKeys={[`${openTarget}`]}>
         {cps}
       </Menu>
     )

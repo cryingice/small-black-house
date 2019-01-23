@@ -1,3 +1,9 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-01-23 15:51:40 
+ * @Last Modified by:   duanlinlin 
+ * @Last Modified time: 2019-01-23 15:51:40 
+ */
 import { connect } from 'react-redux'
 import Mmenus from '../Mmenus';
 import {StateToPropsCommonMethod} from 'Libs/muitls';

@@ -7,6 +7,7 @@
 import constant from './constant';
 import avatar from 'Assets/icon.jpeg';
 const { NEXT, PRE, COMPLETE } = constant;
+// configuration of component includes home and introduction
 export default {
     footText: 'Experience Depends On You',
     logo: avatar,

@@ -1,35 +1,69 @@
-.experiences{
+.experiences {
     // display: flex;
     // width: 70vh;
     margin: 0 auto;
-    width: 100%; 
+    width: 100%;
     max-width: 1000px;
     flex-direction: column;
-    
-    header{
+
+    header {
         width: 100%;
         // flex:none;
         display: flex;
     }
-    .content{
+
+    .content {
         // flex:none;
         display: flex;
-        aside{
+
+        aside {
             padding: 20px 22px;
             box-sizing: border-box;
             width: 30%;
             background-color: #001529;
             color: #fff;
+            color: #0f4980;
         }
-        main{
+
+        main {
             background-color: #fff;
             width: 70%;
             display: flex;
             flex-direction: column;
-            .skills{
+
+            .main-area {
                 padding: 5px 5vh;
                 display: flex;
                 flex-direction: column;
+            }
+
+            .skills {}
+
+            .first-page-keyword {
+                .keyword-content {
+                    display: flex;
+
+                    .single-key {
+                        flex: auto;
+                        padding: 0 5px;
+                    }
+                }
+
+                .triggle {
+                    padding: 5px 0;
+                    display: flex;
+                    justify-content: flex-end;
+                    font-size: 23px;
+
+                    .triggle-name {
+                        cursor: pointer;
+                        color: #dd9120;
+
+                        &:hover {
+                            color: #001529;
+                        }
+                    }
+                }
             }
         }
     }

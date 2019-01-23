@@ -2,7 +2,7 @@
  * @Author: duanlinlin 
  * @Date: 2019-01-20 17:30:35 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-20 22:34:23
+ * @Last Modified time: 2019-01-23 23:07:40
  */
 $time : 1.5s;
 @mixin get-slideout-name($name,$val) {
@@ -50,7 +50,7 @@ $time : 1.5s;
         width: 100px;
         height: 100px;
         box-sizing: border-box;
-        border: 10px solid green;
+        border: 10px solid #0c2850;
         position: absolute;
         border-radius: 50%;
         clip: rect(0px, 50px, 100px, 0px);

@@ -10,9 +10,9 @@ import { turnOff, turnOn, toggleNavStatus } from 'Redux/action/index'
 import {StateToPropsCommonMethod}  from 'Libs/mutils';
 
 
-const { getNavStatus } = StateToPropsCommonMethod;  //得到nav导航栏展开状态
+const { getNavStatus } = StateToPropsCommonMethod;  //get status of navgation
 
-//nav展开按钮的type名
+//html antd
 const iconsName ={
   fold : 'menu-fold',
   unfold : 'menu-unfold'

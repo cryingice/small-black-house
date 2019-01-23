@@ -1,3 +1,9 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-01-23 15:41:30 
+ * @Last Modified by:   duanlinlin 
+ * @Last Modified time: 2019-01-23 15:41:30 
+ */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -9,8 +15,7 @@ import avatar from 'Assets/icon.jpeg';
 // const SubMenu = Menu.SubMenu;
 
 /**
- * 公共头部
- * 
+ * common header
  * @class Mheader
  * @extends {Component}
  */
@@ -23,11 +28,7 @@ export default class Mheader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // triggerName:'menu-fold'
     }
-  }
-  componentDidUpdate(){
-    
   }
   render() {
     return (

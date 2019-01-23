@@ -2,19 +2,26 @@
  * @Author: duanlinlin 
  * @Date: 2018-12-13 16:26:19 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-15 12:07:14
+ * @Last Modified time: 2019-01-23 16:14:21
  */
 import React, { Component } from 'react';
 import { Card } from 'antd'
 
 import './home.scss';
 import config from 'Libs/config';
-import Mstep from './_components/Mstep';    //项目上手组件
+import Mstep from './_components/Mstep';    //how to loading and install
 
-const { introduction, install, title } = config.home;   //项目介绍、项目上手、标题
+const { introduction, install, title } = config.home;   //about project
 const { star, content, accessLink } = introduction;
 const { steps } = install;
 
+/**
+ * @description main page(default page)
+ *
+ * @export
+ * @class Home
+ * @extends {Component}
+ */
 export default class Home extends Component {
     constructor(props) {
         super(props);

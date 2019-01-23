@@ -1,5 +1,11 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-01-23 16:17:02 
+ * @Last Modified by:   duanlinlin 
+ * @Last Modified time: 2019-01-23 16:17:02 
+ */
 import React, { Component } from 'react';
-import PicItem from './_components/PicItem';
+import PicItem from './_components/PicItem';    //picture component in photos frame
 import travel from 'Assets/home_travel.png';
 import reading from 'Assets/home_reading.jpeg';
 import work from 'Assets/home_work.jpeg';
@@ -11,6 +17,13 @@ import 'Assets/icon/font_2vasqr8pgq2/iconfont.css';
 import config from '../../libs/config';
 const { photoStorage } = config.introduction;
 
+/**
+ * @description photos frame of user's life 
+ *
+ * @export
+ * @class Introduction
+ * @extends {Component}
+ */
 export default class Introduction extends Component {
     render() {
         const picUrls = [travel, reading, work,music, comic, game];

@@ -3,6 +3,7 @@ import Percent from './Percent'
 import SingleSkillContent from './SingleSkillContent';
 import '../../scss/Skill/SingleSkill.scss';
 
+//the single skill point in resume's main content
 export default (params) => {
     return (
         <div className="single-skill">

@@ -1,5 +1,13 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-01-23 16:01:42 
+ * @Last Modified by:   duanlinlin 
+ * @Last Modified time: 2019-01-23 16:01:42 
+ */
 import React from 'react'
 import '../../scss/Skill/Percent.scss'
+
+//html percent 
 export default (params) => {
   return(
       <div className="percent">

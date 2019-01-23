@@ -2,8 +2,9 @@
  * @Author: duanlinlin 
  * @Date: 2019-01-14 17:00:50 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-21 00:11:33
+ * @Last Modified time: 2019-01-23 15:40:59
  */
+// config of expreices(resume)
 export default {
     CN: {
         titles: {
@@ -98,59 +99,76 @@ export default {
             }
         },
         main: {
-            skill: [
+            skill: {
+                title:'技能点',
+                titleColor:'#0c2850',
+                content:[{
+                    percentInfo: {
+                        percentText: 'HTML/CSS',
+                        rateNum: 80
+                    },
+                    singleSkillContentInfo: [
+                        'a.精通 div+css布局精确的还原设计图进行页面布局;',
+                        'b.熟悉HTML5.CSS3的新特性，对前端性能优化有一定认识;',
+                        'c.熟练使用flex+百分比/rem+百分比/vw/vh来进行移动端页面布局.'
+                    ]
+
+                },
                 {
-                percentInfo: {
-                    percentText: 'HTML/CSS',
-                    rateNum: 80
-                },
-                singleSkillContentInfo: [
-                    'a.精通 div+css布局精确的还原设计图进行页面布局;',
-                    'b.熟悉HTML5.CSS3的新特性，对前端性能优化有一定认识;',
-                    'c.熟练使用flex+百分比/rem+百分比/vw/vh来进行移动端页面布局.'
-                ]
+                    percentInfo: {
+                        percentText: 'javascript',
+                        rateNum: 75
+                    },
+                    singleSkillContentInfo: [
+                        'a.掌握原生JavaScript操作DOM，BOM元素;',
+                        'b.对前后端架构分离有着一定的理解，能使用AJAX、JSONP、和CORS等技术进行项目前后端分离开发;',
+                        'c.熟练使用ES6的大部分新特性;',
+                        'd.对于JS中面向对象、继承、原型链、闭包等面向对象的知识有一定的掌握与了解.'
+                    ]
 
-            },
-            {
-                percentInfo: {
-                    percentText: 'javascript',
-                    rateNum: 75
                 },
-                singleSkillContentInfo: [
-                    'a.掌握原生JavaScript操作DOM，BOM元素;',
-                    'b.对前后端架构分离有着一定的理解，能使用AJAX、JSONP、和CORS等技术进行项目前后端分离开发;',
-                    'c.熟练使用ES6的大部分新特性;',
-                    'd.对于JS中面向对象、继承、原型链、闭包等面向对象的知识有一定的掌握与了解.'
-                ]
-
-            },
-            {
-                percentInfo: {
-                    percentText: '框架/库',
-                    rateNum: 80
+                {
+                    percentInfo: {
+                        percentText: '框架/库',
+                        rateNum: 80
+                    },
+                    singleSkillContentInfo: [
+                        'a.熟练使用jQuery、Zepto等库;',
+                        'b.有较好的文档查看能力，能熟练使用如swiper/iscroll的常用插件;',
+                        'c.熟练应用vue + iview +webpack搭建项目并进行开发;',
+                        'd.熟练应用react + antd + redux + react-router + webpack搭建项目;',
+                        'e.对ts有一定了解;',
+                        'f.了解node express框架以及常用工具'
+                    ]
                 },
-                singleSkillContentInfo: [
-                    'a.熟练使用jQuery、Zepto等库;',
-                    'b.有较好的文档查看能力，能熟练使用如swiper/iscroll的常用插件;',
-                    'c.熟练应用vue + iview +webpack搭建项目并进行开发;',
-                    'd.熟练应用react + antd + redux + react-router + webpack搭建项目;',
-                    'e.对ts有一定了解;',
-                    'f.了解node express框架以及常用工具'
-                ]
+                {
+                    percentInfo: {
+                        percentText: '工具',
+                        rateNum: 80
+                    },
+                    singleSkillContentInfo: [
+                        'a.掌握PS、FW等工具的使用;',
+                        'b.掌握使用git/gulp/webpack等主流研发流程工具;',
+                        'c.掌握visual studio code/sublime编码工;',
+                        'd.熟练应用vconsole、mac Safari调试工具调试移动端页面;',
+                    ]
+                }
+            ],
             },
-            {
-                percentInfo: {
-                    percentText: '工具',
-                    rateNum: 80
-                },
-                singleSkillContentInfo: [
-                    'a.掌握PS、FW等工具的使用;',
-                    'b.掌握使用git/gulp/webpack等主流研发流程工具;',
-                    'c.掌握visual studio code/sublime编码工;',
-                    'd.熟练应用vconsole、mac Safari调试工具调试移动端页面;',
-                ]
-            }
-        ]
+            firstPageKeyWord:{
+                title:'下一页关键词',
+                titleColor:'#0c2850',
+                triggleText:'下一页',
+                content:[
+                    '工作经历',
+                    '项目经验',
+                    'Vue',
+                    'React',
+                    '后台管理系统',
+                    '京东双十一活动'
+                ],
+                colorArea:['#001529','#0f4980','#dd9120','#8c20dd','#607d8b']
+            } 
         }
     },
     EN: {

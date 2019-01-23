@@ -24,6 +24,13 @@ store.dispatch(addTodo('add new one'));
 
 console.log(store.getState());
 
+/**
+ * @description demo to fix bugs
+ *
+ * @export
+ * @class Demo
+ * @extends {Component}
+ */
 export default class Demo extends Component {
   componentWillReceiveProps() {
     console.log('我是父组件的componentWillReceiveProps');

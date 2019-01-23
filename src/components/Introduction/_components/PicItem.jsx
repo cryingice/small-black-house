@@ -2,6 +2,7 @@ import React from 'react';
 import Cover from './Cover';
 import  '../scss/PicItem.scss';
 
+//picture component in photos frame
 export default (params) => {
     return (
         <div className={`${params.cla} pic`}>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="icon"
+    href="https://qishaoxuan.github.io/animate_resume_ts/images/favicon.png">
+
+  <title>RhythmDisk Demo</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  html, body {
+    height: 100%;
+    background: #303133;
+  }
+  audio {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    z-index: 100;
+  }
+  .copyright {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-size: 14px;
+    color: #fff;
+  }
+  .link {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 14px;
+    color: #fff;
+  }
+  @media screen and (max-width: 767px) {
+    audio {
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+  .body{
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+</style>
+<body>
+<div class="body">
+  <div id="canvas-container"></div>
+  <a href="https://github.com/QiShaoXuan/rhythm-disk" class="link">GITHUB ==></a>
+</div>
+
+
+</body>
+
+<script src="./asserts/rhythmRipple.js"></script>
+<script>
+  function detectDeviceType() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop'
+  }
+  const mobileOption = {
+    size: window.innerWidth - 30,
+    radius: .25,
+    rippeWidth: 2,
+    pointRadius: 4,
+  }
+  const rd = new Ripple('#canvas-container', Object.assign({cover: './asset/Qi.png'}, detectDeviceType() === 'Mobile' ? mobileOption : {}))
+  rd.animate()
+</script>
+</html>

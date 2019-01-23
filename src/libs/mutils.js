@@ -6,8 +6,8 @@
  */
 export const StateToPropsCommonMethod = {
     /**
-     * @description 得到导航栏 展开与否的状态值
-     * @param {Object} state 储存中的最新数据
+     * @description get navStatus of navigation
+     * @param {Object} state 
      */
     getNavStatus: (state) => {
         return state.navStatus;
