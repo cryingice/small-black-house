@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "antd": "^3.10.5",
+    "gsap": "^2.0.2",
     "lodash.find": "^4.6.0",
     "node-sass": "^4.10.0",
     "react": "^16.6.0",
     "react-redux": "^6.0.0",
+    "react-transition-group": "^2.2.1",
     "redux": "^4.0.1",
     "redux-devtools": "^3.4.2",
     "whatwg-fetch": "2.0.3"
@@ -66,7 +68,6 @@
     "react-loadable": "^5.5.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-transition-group": "^2.5.0",
     "redux-devtools-extension": "^2.13.7",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
@@ -145,5 +146,10 @@
         }
       ]
     ]
+  },
+  "proxy": {
+    "/api/": {
+      "target": "http://localhost:3003"
+    }
   }
 }

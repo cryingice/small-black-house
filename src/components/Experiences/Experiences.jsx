@@ -3,9 +3,9 @@ import Avatar from './_components/Avatar';
 import AreaInfo from './_components/AreaInfo/AreaInfo';
 import HeaderInfo from './_components/HeaderInfo';
 import SlotTitle from './_components/common/SlotTitle';     //the slot of title
-import SingleSkill from './_components/Skill/SingleSkill';
 import './Experiences.scss';
 import experiencesConfig from '../../libs/experiencesConfig';
+import ExperienceMainAreaDy from './util/ExperienceMainAreaDy';
 
 /**
  * @description the component to show user's resume
@@ -14,6 +14,26 @@ import experiencesConfig from '../../libs/experiencesConfig';
  * @extends {Component}
  */
 export default class Experiences extends Component {
+    constructor(props) {
+        super(props);
+        console.log(props);
+        this.state = {
+            pageNum: 1,
+        }
+    }
+    setPageNum(type){
+        switch (type) {
+            case 'next':
+                this.setState({pageNum: this.state.pageNum + 1}) 
+                break;
+            case 'pre':
+                this.setState({pageNum: this.state.pageNum - 1}) 
+                break;
+            default:
+                break;
+        }
+        
+    }
     render() {
         const { CN } = experiencesConfig;
         const { aside, titles, main } = CN;
@@ -25,53 +45,51 @@ export default class Experiences extends Component {
                 </AreaInfo>)
         }, []);
         //mainArea skill componentLists
-        const skillInfo = main.skill;
-        const SingleSkillComponents = skillInfo.content.map((singleSkill, idx) => {
-            return (
-                <SingleSkill singleInfo={singleSkill} key={idx} />
+        const pageNum = this.state.pageNum ? this.state.pageNum  : 1;
+        const mainAreaDy = new ExperienceMainAreaDy(pageNum);
+        const mainAreaCompontsList = mainAreaDy.getComponentProcessor();
+
+        //mainArea triggle componentLists
+        const totalPageNum = mainAreaDy.getTotalPageNum();
+        const currentPage = mainAreaDy.getPageNum();
+        const triggle = currentPage === 1 ?
+            (
+                <div className="main-area triggle">
+                    <span className="triggle-name" onClick={()=> this.setPageNum('next')}>下一页</span>
+                </div>
+
+            ) : (
+                currentPage === totalPageNum ?
+                    (
+                        <div className="main-area triggle">
+                            <span className="triggle-name" onClick={()=> this.setPageNum('pre')}>上一页</span>
+                        </div>
+                    ) : (
+                        <div className="main-area triggle">
+                            <span className="triggle-name" onClick={()=> this.setPageNum('pre') }>上一页</span>
+                            <span className="triggle-name" onClick={()=> this.setPageNum('next') }>下一页</span>
+                        </div>
+                    )
             )
-        })
-        //mainArea first page keywords
-        //colors
-        const keywordInfo = main.firstPageKeyWord;
-        const colorArea = keywordInfo.colorArea;
-        // content componentLists
-        const keywords = keywordInfo.content.map((key, idx) => {
-            const colorVal = colorArea[Math.round((colorArea.length - 1) * Math.random())]
-            return (
-                <span className="single-key" key={idx} style={{ color: colorVal }}>{key}</span>
-            )
-        })
         return (
-            <div className="tmp">
-                暂无
-            </div>
-            // <div className="experiences">
-            //     <header>
-            //         <Avatar />
-            //         <HeaderInfo />
-            //     </header>
-            //     <div className="content">
-            //         <aside>
-            //             {AreaInfoComponents}
-            //         </aside>
-            //         <main>
-            //             <div className="main-area skills">
-            //                 <SlotTitle title={skillInfo.title} titleColor={skillInfo.titleColor} />
-            //                 {SingleSkillComponents}
-            //             </div>
-            //             <div className="main-area first-page-keyword">
-            //                 <SlotTitle title={keywordInfo.title} titleColor={keywordInfo.titleColor} />
-            //                 <div className="keyword-content">
-            //                     {keywords}
-            //                 </div>
-            //                 <div className="triggle">
-            //                     <span className="triggle-name">{keywordInfo.triggleText}</span>
-            //                 </div>
-            //             </div>
-            //         </main>
-            //     </div>
+            // <div className="tmp">
+            //     暂无
             // </div>
+            <div className="experiences">
+                <header>
+                    <Avatar />
+                    <HeaderInfo />
+                </header>
+                <div className="content">
+                    <aside>
+                        {AreaInfoComponents}
+                    </aside>
+                    <main>
+                        {mainAreaCompontsList}
+                        {triggle}
+                    </main>
+                </div>
+            </div>
         );
     }
 }

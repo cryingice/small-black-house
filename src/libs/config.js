@@ -2,7 +2,7 @@
  * @Author: duanlinlin 
  * @Date: 2019-01-14 17:00:50 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-21 00:13:18
+ * @Last Modified time: 2019-02-02 19:41:09
  */
 import constant from './constant';
 import avatar from 'Assets/icon.jpeg';
@@ -154,6 +154,37 @@ export default {
                     icon:'icon-78'
                 }
             ],
+        }
+    },
+    entry:{
+        loginInfo:{
+
+        },
+        descriptionInfo:{
+            title:'Small Black House',
+            content:'是一个个人空间项目,目前展示一些作者私人展示信息,作者希望以后能把它做成一个人人可定制的空间应用',
+            feature:[
+                {
+                    iconType:'smile',
+                    title:'项目概况',
+                    detailContent:'技术栈:react + redux + scss + es6 + react-router + antd(v3.10.5) + webpack'
+                },
+                {
+                    iconType:'appstore',
+                    title:'生活记录',
+                    detailContent:'记录自己生活的点点滴滴,希望能把自己喜欢的东西展示给你'
+                },
+                {
+                    iconType:'file-text',
+                    title:'简历',
+                    detailContent:'我的简历,希望你能一眼了解我的工作'
+                },
+                {
+                    iconType:'question-circle',
+                    title:'创意小作品',
+                    detailContent:'灵感凸现,记录下来'
+                }
+            ]
         }
     }
 }

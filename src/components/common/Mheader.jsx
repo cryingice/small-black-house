@@ -1,8 +1,8 @@
 /*
  * @Author: duanlinlin 
  * @Date: 2019-01-23 15:41:30 
- * @Last Modified by:   duanlinlin 
- * @Last Modified time: 2019-01-23 15:41:30 
+ * @Last Modified by: duanlinlin
+ * @Last Modified time: 2019-01-29 11:42:18
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -11,6 +11,7 @@ import { Icon } from 'antd';
 
 import './scss/Mheader.scss';
 import avatar from 'Assets/icon.jpeg';
+import axios from 'axios'  
 
 // const SubMenu = Menu.SubMenu;
 
@@ -27,8 +28,17 @@ export default class Mheader extends Component {
   }
   constructor(props) {
     super(props);
-    this.state = {
-    }
+    // this.state = {
+    //   usr:'大吉大利,晚上吃鸡'
+    // }
+  }
+  componentWillMount(){
+    axios.get('/api/data')
+      .then((res)=>{
+        console.log(res,'resssss');
+        res.status === 200 && this.props.getUserName(res.data.user)
+        // this.setState({usr:res.data.user})
+      })
   }
   render() {
     return (
@@ -43,7 +53,7 @@ export default class Mheader extends Component {
           {/*<Icon type="user" />*/}
           <span className="user-info-name">
            {/* {'' + this.props.navStatus}*/} 
-            大吉大利,晚上吃鸡!!
+           {this.props.user}
         </span>
         </span>
       </div>

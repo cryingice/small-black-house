@@ -1,0 +1,43 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-02-02 11:21:15 
+ * @Last Modified by: duanlinlin
+ * @Last Modified time: 2019-02-02 13:07:06
+ */
+.single-feature {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh;
+
+    .feature-avatar {
+        height: 8vh;
+        width: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        border-radius: 50% 50%;
+        .feature-icon {
+            font-size: 5vh;
+            transition: all 1s ease-in-out;
+        }
+        &:hover{
+            .feature-icon {
+                font-size: 5vh;
+                transform: rotateY(180deg)
+            }
+        }
+    }
+
+    .feature-name {
+        font-size: 3vh;
+        padding: 10px 0;
+    }
+    .feature-detail {
+        max-width: 350px;
+    }
+}
+
+

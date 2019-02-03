@@ -1,0 +1,45 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-01-30 16:18:49 
+ * @Last Modified by: duanlinlin
+ * @Last Modified time: 2019-02-02 21:19:14
+ */
+.entry-description{
+    background: url(../../../asset/description_backgroud3.jpg);
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out;
+    width: 100%;
+    height: 100%;
+    &.active{
+        transform: translateY(0%);
+    }
+    .house-feature{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 15vh;
+        color:#fff;
+        .feature-simply-introduction{
+            display: flex;
+            flex-direction: column;
+            .title{
+                font-size: 4vh;
+                font-weight: 700;
+            }
+            .content{
+                font-size: 2.4vh;
+            }
+        }
+        .feature-detail-introduction{
+            width: 100%;
+        }
+    }
+}

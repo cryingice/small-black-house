@@ -1,68 +1,35 @@
-/*
- * @Author: duanlinlin 
- * @Date: 2018-12-07 18:13:02 
- * @Last Modified by: duanlinlin
- * @Last Modified time: 2018-12-08 20:44:52
- */
-import React, {
-  Component
-} from 'react'
-import SubComponent from './SubComponent';
-import './demo.scss';
-import {
-  createStore
-} from 'redux'
-import todoApp from './Demo_Redux/reducer';
-import { addTodo, toggleTodo, setVisibilityFilter } from './Demo_Redux/actions';
+import React, { Component } from 'react'
+import {CSSTransition} from 'react-transition-group';
+import './demo.scss'
 
-
-let store = createStore(todoApp)
-const unsubscribe = store.subscribe(() => console.log(store.getState()))
-console.log(addTodo('add new one'));
-
-store.dispatch(addTodo('add new one'));
-
-console.log(store.getState());
-
-/**
- * @description demo to fix bugs
- *
- * @export
- * @class Demo
- * @extends {Component}
- */
-export default class Demo extends Component {
-  componentWillReceiveProps() {
-    console.log('我是父组件的componentWillReceiveProps');
-  }
-  componentWillUpdate() {
-    console.log('我是父组件的componentWillUpdate');
-  }
-  componentWillMount() {
-    console.log('我是父组件的componentWillMount');
-  }
-  componentDidMount() {
-    console.log('我是父组件的componentDidMount');
-  }
-  constructor(props) {
-    super(props); //后才能用this获取实例化对象
-    this.state = {
-      fatherClass: 'red'
+export default class Fad extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            in: true
+        }
     }
-  }
-  handleClick = () => {
-    this.setState({
-      fatherClass: 'blue'
-    })
-  }
-  render() {
-    return (<div className={
-      this.state.fatherClass
-    } >
-      <SubComponent />
-      <button onClick={
-        () => this.handleClick()
-      } > </button> </div>
-      )
+    render() {
+        const duration = 6000;
+        // const defaultStyle = {
+        //     transition: `opacity ${duration}ms ease-in-out`,
+        //     opacity: 0,
+        // }
+
+        // const transitionStyles = {
+        //     enter:{opacity: 0},
+        //     entering: { opacity: 0.5},
+        //     entered: { opacity: 1 },
+        // };
+        return (
+            <CSSTransition in={this.state.in} timeout={duration} classNames="feature">
+                <div className="feature">
+                    dsdsdsdsdsdsdsds
+                    dsdsdsdsdsdsdsds
+                    dsdsdsdsdsdsdsds
+                    dsdsdsdsdsdsdsds
+                </div>
+            </CSSTransition>
+        )
     }
-};
+}
