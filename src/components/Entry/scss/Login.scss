@@ -1,12 +1,13 @@
-.entry-login{
-    color:#fff;
+.entry-login {
+    color: #fff;
     background: url(../../../asset/login_backgroud1.jpg);
     position: absolute;
     top: 0;
     left: 0;
     transition: all 1s ease-in-out;
     transform: translateY(-100%);
-    .login-page{
+
+    .login-page {
         position: absolute;
         top: 0;
         left: 0;
@@ -15,34 +16,105 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        .login-card{
+
+        .login-card {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            .title{
+
+            .title {
                 font-size: 6vh;
                 font-weight: 700;
             }
-            .poster-text{
+
+            .poster-text {
                 font-size: 3.4vh;
             }
-            .button{
+
+            .button {
+                cursor: pointer;
                 align-self: stretch;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 border-radius: 4px;
-                background-color:  #2d8cf0;
+                background-color: #2d8cf0;
                 margin: 2vh 0;
                 padding: 2vh 0;
-                &:hover{
-                    background-color:#57a3f3;
+
+                &:hover {
+                    background-color: #57a3f3;
+                }
+            }
+
+            .login-name,
+            .login-password {
+                width: 33vh;
+                color: #000;
+            }
+
+            .login-name {
+                padding: 2vh 0;
+                .anticon-close-circle {
+                    cursor: pointer;
+                    color: #ccc;
+                    transition: color 0.3s;
+                    font-size: 12px;
+                }
+
+                .anticon-close-circle:hover {
+                    color: #999;
+                }
+
+                .anticon-close-circle:active {
+                    color: #666;
+                }
+            }
+
+            .login-password {
+                input{
+                    -webkit-appearance: textfield;
+                    min-height: 100%;
+                    font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                    font-variant: tabular-nums;
+                    -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    position: relative;
+                    display: inline-block;
+                    padding: 4px 30px;
+                    width: 100%;
+                    height: 32px;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    color: rgba(0, 0, 0, 0.65);
+                    background-color: #fff;
+                    background-image: none;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 4px;
+                    -webkit-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    transition: all 0.3s;
+                    -webkit-rtl-ordering: logical;
+                    cursor: text;
+                    &:focus{
+                        border-color: #40a9ff;
+                        outline: 0;
+                        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+                        border-right-width: 1px !important;
+                    }
+                    &::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+                        color: rgba(0, 0, 0, 0.25);
+                    }
                 }
             }
         }
     }
 }
-.active{
-    transform: translateY(0);    
+
+.active {
+    transform: translateY(0);
 }

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^3.10.5",
+    "antd": "^3.11.4-beta.1",
     "gsap": "^2.0.2",
     "lodash.find": "^4.6.0",
     "node-sass": "^4.10.0",
