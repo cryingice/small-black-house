@@ -1,0 +1,16 @@
+/*
+ * @Author: duanlinlin 
+ * @Date: 2019-02-02 17:14:18 
+ * @Last Modified by:   duanlinlin 
+ * @Last Modified time: 2019-02-02 17:14:18 
+ */
+.feature-style-container{
+    opacity: 0;
+    transition: all 2s ease-in-out;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    &.active{
+        opacity: 1;
+    }
+}

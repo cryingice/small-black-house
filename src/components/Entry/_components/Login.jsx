@@ -83,21 +83,7 @@ class Login extends Component {
                         <div className="button button__tourist" onClick={() => this.clickProcessor({ type: 'tourist' })}>
                             游客模式
                         </div>
-                        <div className="login-input">
-                            <div className="login-name">
-                                <Input
-                                    placeholder="Enter your username"
-                                    prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                    suffix={suffix}
-                                    value={userName}
-                                    onChange={this.onChangeUserName}
-                                    ref={node => this.userNameInput = node}
-                                />
-                            </div>
-                            <div className="login-password">
-                                <input type="password" placeholder="Enter your password" onChange={this.changePassword} value={this.state.password}/>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

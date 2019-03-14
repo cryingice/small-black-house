@@ -2,7 +2,7 @@
  * @Author: duanlinlin 
  * @Date: 2018-12-13 16:26:19 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-01-23 16:14:21
+ * @Last Modified time: 2019-03-14 15:43:01
  */
 import React, { Component } from 'react';
 import { Card } from 'antd'
@@ -25,6 +25,8 @@ const { steps } = install;
 export default class Home extends Component {
     constructor(props) {
         super(props);
+        console.log(this.props,'props');
+        
         this.state = {
         }
     }

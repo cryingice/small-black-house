@@ -2,13 +2,13 @@
  * @Author: duanlinlin 
  * @Date: 2019-01-30 16:52:00 
  * @Last Modified by: duanlinlin
- * @Last Modified time: 2019-02-16 18:56:05
+ * @Last Modified time: 2019-02-16 17:21:20
  */
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import '../scss/Description.scss'
-import SingleFeature from './SingleFeature'
+import '../scss/Vindication.scss'
+import SmallLazyCat from './SmallLazyCat';
 import Fad from './Fad'
 
 const shapeShifter = require('../../../libs/shape-shifter')
@@ -17,10 +17,10 @@ let resizeTimer = null;
  * introduce something about project before loging
  *
  * @export
- * @class Description
+ * @class Vindication
  * @extends {Component}
  */
-export class Description extends Component {
+export class Vindication extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -28,21 +28,18 @@ export class Description extends Component {
 			isShowTitle:false,
 		}
 	}
-	componentWillUpdate() {
-		// this.props.page === 2 && this.createCanvasEffect();
-	}
 	componentWillUnmount() {
 		resizeTimer && clearTimeout(resizeTimer)
 	}
 	//create the effect of shape-shifter
 	createCanvasEffect() {
 		const container = document.querySelectorAll('.description-canvas-container')[0];
-		shapeShifter.init(container, "Welcome|To|Small|Black|House!");
+		shapeShifter.init(container, "Dear|Shine,|Happy|Valentine's|Day!");
 		resizeTimer = setTimeout(() => {
 			shapeShifter.UI.reset()
 			this.setState({ featureComponentDom: null,isShowTitle:true });
 			this.props.page === 2 && this.dynamicShowFeature();
-		}, 8000)
+		}, 9000)
 	}
 	//clear Feature Content
 	clearFeatureContent(){
@@ -66,7 +63,7 @@ export class Description extends Component {
 		const descriptionInfo = this.props.descriptionInfo || [];
 		const SingleFeatureComponents = descriptionInfo.feature.map((single,idx) =>
 			(
-				<SingleFeature key={single.title} iconType={single.iconType} title={single.title} detailContent={single.detailContent} />
+				<SmallLazyCat key={single.title} idx={idx} iconType={single.iconType} title={single.title} detailContent={single.detailContent} />
 			)
 		)
 		return SingleFeatureComponents
@@ -93,10 +90,10 @@ export class Description extends Component {
 		)
 	}
 }
-Description.defaultProps = {
+Vindication.defaultProps = {
 	page: 2
 }
-Description.propTypes = {
+Vindication.propTypes = {
 	page: PropTypes.number
 }
-export default Description
+export default Vindication

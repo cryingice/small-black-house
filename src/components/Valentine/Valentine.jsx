@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Login from './_components/Login';
-import Description from './_components/Description';
+import LoveText from './_components/LoveText';
+import Vindication from './_components/Vindication';
 import config from '../../libs/config'
-import './Entry.scss';
+import './Valentine.scss';
 /**
- * @description the component of login
+ * @description the component of Valentine's surprise 
  * @export
  * @class Home
  * @extends {Component}
  */
-export default class Entry extends Component {
+export default class Valentine extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,15 +21,17 @@ export default class Entry extends Component {
         this.setState({
             currentPage: this.state.currentPage  =  +tmpCurrentPage,
         })
-        tmpCurrentPage == 2 && this.refs.description.createCanvasEffect();
-        tmpCurrentPage == 1 && this.refs.description.clearFeatureContent();
+        tmpCurrentPage == 2 && this.refs.lovetext.shadowText();
+        tmpCurrentPage == 2 && this.refs.vindication.createCanvasEffect();
+        tmpCurrentPage == 1 && this.refs.vindication.clearFeatureContent();
+        tmpCurrentPage == 1 && this.refs.lovetext.timerProcessor();
     }
     render() {
-        const {loginInfo={},descriptionInfo={}} = config.entry;
+        const {loveTextInfo ={loveTextMag:[]},descriptionInfo={}} = config.valentine;
         return (
             <div className="entry">
-                <Login page={this.state.currentPage} loginInfo={loginInfo} ref="login"/>
-                <Description page={this.state.currentPage} descriptionInfo={descriptionInfo} ref="description"/>
+                <LoveText page={this.state.currentPage} loveTextInfo={loveTextInfo} ref="lovetext"/>
+                <Vindication page={this.state.currentPage} descriptionInfo={descriptionInfo} ref="vindication"/>
                 <div className="dot-triggle">
                     <span className={this.state.currentPage === 1 ? "dot__single active" : "dot__single"}
                     onClick={()=>this.changePage('1st')}
